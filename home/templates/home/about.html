@@ -1,0 +1,28 @@
+{% extends './base.html' %}
+
+{% block about %}
+
+<div class="center">
+    <h1 style="text-align: center;">About</h1>
+    <hr>
+    <p>I’m a <b>Full Stack Python Developer</b> located in Barcelona. I have a serious passion for <b>Python</b> ,
+        <b>Web
+            Developement</b> and using the mighty power of programming <b>to solve real-world problems</b> and
+        <b>improve life
+            through technology</b>.
+    </p>
+    <p>
+        <b>Persistent</b>, <b>prolific</b>, <b>creative </b>person and <b>problem
+            solver</b> with
+        high attention to
+        detail and
+        utility. Fan of MMA,
+        travelling around the world, self-education, literature and clinical psychology.
+    </p>
+    <p>Interested in the entire software and web development spectrum and working on ambitious projects to continually
+        <b>grow</b> and <b>contribute</b>.
+    </p>
+    <p> <a href="{% url 'home.contact' %}">Let's work together and improve!</a></p>
+</div>
+
+{% endblock %}

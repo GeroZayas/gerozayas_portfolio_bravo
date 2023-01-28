@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+
+{%block blog %}
+<div class="col-md-8 offset-md-2">
+    <h1 style="text-align: center;">{{ post.name }}</h1>
+    <img class="img-fluid rounded mx-auto d-block cool-shadow" src=" {{ post.image.url }}" alt="{{post.name}}">
+    <br>
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <p>{{ post.body | safe }}</p>
+    <h3>Leave a comment:</h3>
+    <form action="/blog/{{ post.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-outline-dark border-0 cool-shadow project-btn">Submit</button>
+    </form>
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+    <p>
+        On {{comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+
+{%endblock blog %}

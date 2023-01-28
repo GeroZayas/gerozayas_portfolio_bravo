@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+
+{%block blog %}
+
+<h1 style="text-align: center;">Blog</h1>
+<div style="padding-top: 0px;" class="col-md-8 offset-md-2 center">
+    <hr>
+
+    {% for post in posts %}
+
+    <h2 class="center post-name" style="text-align: center;"><a href="{% url 'blog_detail' post.pk%}">{{post.name}}</a>
+    </h2>
+
+
+    <div class="img-fluid rounded">
+        <img src="{{ post.image.url }}" class="img-fluid rounded blog-image" alt="{{post.name}}">
+    </div>
+
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+
+    <hr>
+
+    <!-- <p>{{ post.body | slice:":300" | safe }} ...</p> -->
+
+    {% endfor %}
+
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{%block portfolio %}
+
+<div class="center">
+    <h1 style="text-align: center;">Portfolio</h1>
+    <hr>
+    <div class="row">
+        {% for project in projects %}
+
+        {% if project.is_active %}
+
+
+        <div class="col-md-4">
+            <div id="project-card" class="card mb-2 border-1">
+                <img class=" card-img-top" src="{% static project.image %}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <hr class="hr " />
+                    <p class="card-text" id="project-description">{{ project.description }}</p>
+                    <a href="{% url 'project_detail' project.pk %}"
+                        class="btn btn-outline-dark border-0 cool-shadow project-btn">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+{% endblock portfolio %}

@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block contact %}
+
+<!-- <section>
+    <div class="innerPageBannerCol">
+        <div class="container">
+            <div class="row g-4 g-md-3  align-items-center">
+                <div class="col-md-6">
+                    <div class="bannerContent">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<section>
+    <div class="center">
+        <h1 style="text-align: center;">Let's get in contact!</h1>
+        <hr>
+        <form id="contactForm" method="POST" action="/contact/">
+            {% csrf_token %}
+            <label style="margin-top: 15px;" for="name"><b>Name</b></label>
+            {{form.name}}
+
+            <label style="margin-top: 15px;" for="email"><b>Email</b></label>
+            {{form.email}}
+
+            <label style="margin-top: 15px;" for="subject"><b>Message</b></label>
+            {{form.message}}
+
+            <input style="margin-top: 15px;" class='btn btn-outline-dark border-0 cool-shadow project-btn' type="submit" value="Submit">
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}
