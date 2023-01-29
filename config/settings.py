@@ -18,11 +18,12 @@ SECRET_KEY = env("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
         "https://pygero.up.railway.app",
+        "http://pygero.up.railway.app",
         "https://*.railway.app",
         "http://*.railway.app",
     ]
