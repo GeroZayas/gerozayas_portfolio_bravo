@@ -13,7 +13,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     body = RichTextField(blank=True, null=True)
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True, max_length=255)
     is_active = models.BooleanField(default=True)
     technology = models.CharField(max_length=40)
     github_link = models.URLField(max_length=200)

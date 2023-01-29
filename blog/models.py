@@ -25,7 +25,7 @@ class Category(models.Model):
 class Post(models.Model):
     name = models.CharField(max_length=255)
     body = RichTextField(blank=True, null=True)
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True, max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category", related_name="posts")
