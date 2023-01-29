@@ -22,6 +22,7 @@ DEBUG = True
 
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
+        "https://pygero.up.railway.app",
         "https://*.railway.app",
         "http://*.railway.app",
     ]
