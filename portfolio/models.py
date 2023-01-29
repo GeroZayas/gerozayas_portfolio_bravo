@@ -17,7 +17,7 @@ class Project(models.Model):
     is_active = models.BooleanField(default=True)
     technology = models.CharField(max_length=40)
     github_link = models.URLField(max_length=200)
-    certificate_image = models.ImageField(upload_to="static/images/Projects")
+    image = models.ImageField(upload_to="static/images/Projects")
 
     ranking = models.IntegerField(default=7)
 
