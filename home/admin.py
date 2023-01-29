@@ -1,5 +1,7 @@
 from django.contrib import admin
-from home.models import ContactProfile, Certificate
+
+# from home.models import ContactProfile, Certificate
+from home.models import ContactProfile
 
 # Register your models here.
 
