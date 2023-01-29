@@ -13,6 +13,6 @@ class ContactAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(Certificate)
-class CertificateAdmin(admin.ModelAdmin):
-    list_display = ("id", "name")
+# @admin.register(Certificate)
+# class CertificateAdmin(admin.ModelAdmin):
+#     list_display = ("id", "name")
