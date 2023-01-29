@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+import time
 
 # from ckeditor.fields import RichTextField
 
@@ -34,7 +35,9 @@ class Certificate(models.Model):
     certificate_link = models.URLField(
         max_length=200, default="www.github.com/gerozayas"
     )
-    certificate_image = models.ImageField(upload_to="static/images/Certificates")
+    certificate_image = models.ImageField(
+        upload_to="static/images/Certificates", max_length=255
+    )
 
     def __str__(self):
         return self.name
