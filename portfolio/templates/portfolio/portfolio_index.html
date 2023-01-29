@@ -15,7 +15,7 @@
 
         <div class="col-md-4">
             <div id="project-card" class="card mb-2 border-1">
-                <img class=" card-img-top" src="{% static project.image %}">
+                <img class=" card-img-top" src="{{ project.image.url }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ project.title }}</h5>
                     <hr class="hr " />
