@@ -1,0 +1,10 @@
+env_portfolio_bravo/
+.env
+
+
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
