@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# from home.models import ContactProfile, Certificate
+from home.models import ContactProfile, Certificate
 from home.models import ContactProfile
 
 # Register your models here.
@@ -15,6 +15,6 @@ class ContactAdmin(admin.ModelAdmin):
     )
 
 
-# @admin.register(Certificate)
-# class CertificateAdmin(admin.ModelAdmin):
-#     list_display = ("id", "name")
+@admin.register(Certificate)
+class CertificateAdmin(admin.ModelAdmin):
+    list_display = ("id", "name")

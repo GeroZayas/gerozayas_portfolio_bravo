@@ -38,6 +38,7 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
+# ---------------------  -------------------------------
 # CSRF_TRUSTED_ORIGINS = [
 #     "https://pygero.up.railway.app",
 #     "http://pygero.up.railway.app",
@@ -54,6 +55,7 @@ if not DEBUG:
 # SECURE_HSTS_SECONDS = 2, 592, 000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
+# ---------------------  -------------------------------
 
 ALLOWED_HOSTS = ["*"]
 
@@ -165,7 +167,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Update database configuration from $DATABASE_URL.
-# import dj_database_url
+import dj_database_url
 
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES["default"].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES["default"].update(db_from_env)

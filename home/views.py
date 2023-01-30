@@ -3,7 +3,7 @@ from .forms import ContactForm
 from django.contrib import messages
 from django.views import generic
 
-# from .models import Certificate
+from .models import Certificate
 
 # Create your views here.
 # def home(request):
@@ -36,9 +36,9 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # certificates = Certificate.objects.filter(is_active=True)
+        certificates = Certificate.objects.filter(is_active=True)
 
-        # context["certificates"] = certificates
+        context["certificates"] = certificates
         return context
 
 

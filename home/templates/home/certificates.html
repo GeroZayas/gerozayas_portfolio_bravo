@@ -21,7 +21,7 @@
             {% if certificate.is_active %}
 
             <div class="carousel-item {% if forloop.first %}active{% endif %} soft-borders">
-                <a href="{{certificate.certificate_link}}"><img src="{% static certificate.certificate_image %}"
+                <a href="{{certificate.certificate_link}}"><img src="{{ certificate.certificate_image.url }}"
                         class="d-block w-100 soft-borders" alt="{{certificate.title}}"></a>
                 <div class="carousel-caption d-none d-md-block soft-borders">
                     <!-- <h4 class="certificate-title">{{certificate.title}}</h4> -->
