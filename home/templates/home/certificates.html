@@ -5,7 +5,7 @@
     <hr class="hr " />
 
     <!--  Certificates Carousel-->
-    <div id="carouselExampleCaptions" class="carousel slide cool-shadow" style="max-width: 450px;">
+    <div id="carouselExampleCaptions" class="carousel slide cool-shadow" style="max-width: 500px;">
 
         <div class="carousel-inner">
 
@@ -14,7 +14,7 @@
             {% if certificate.is_active %}
 
             <div class="carousel-item {% if forloop.first %}active{% endif %} soft-borders">
-                <a href="{{certificate.certificate_link}}"><img style="max-width: 450px;"
+                <a href="{{certificate.certificate_link}}"><img style="max-width: 500px;"
                         src="{{ certificate.certificate_image.url }}" class="d-block w-100 soft-borders"
                         alt="{{certificate.title}}"></a>
                 <div class="carousel-caption d-none d-md-block soft-borders">
