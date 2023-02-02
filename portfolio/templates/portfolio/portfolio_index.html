@@ -5,7 +5,7 @@
 {%block portfolio %}
 
 <div class="center">
-    <h1 style="text-align: center;">Portfolio</h1>
+    <h1 style="text-align: center;">Portfolio &#127947</h1>
     <hr>
     <div class="row">
         {% for project in projects %}
@@ -19,7 +19,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ project.title }}</h5>
                     <hr class="hr " />
-                    <p class="card-text" id="project-description">{{ project.description }}</p>
+                    <p style="font-size: small;" class="card-text" id="project-description">{{ project.description }}
+                    </p>
                     <a href="{% url 'project_detail' project.pk %}"
                         class="btn btn-outline-dark border-0 cool-shadow project-btn">
                         Read More

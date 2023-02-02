@@ -29,12 +29,40 @@
 
     <link rel="stylesheet" href="{% static 'css/main.css' %} ">
     <style>
-        div.img-fluid {
-            max-width: 50%;
+        div {
+            max-width: 1200px !important;
         }
 
-        #contact-btn {
+
+
+
+        #portfolio-btn {
+            background-color: rgb(121, 15, 15);
+            color: rgb(255, 255, 255);
+        }
+
+        #portfolio-btn:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(143, 12, 12);
+        }
+
+        div.img-fluid {
+            max-width: 100%;
+        }
+
+        #contact-btn,
+        #download-btn {
             margin-left: 10px;
+        }
+
+        .contact-btn {
+            background-color: rgb(225, 84, 84) !important;
+            color: #f0f0f0;
+        }
+
+        .contact-btn:hover {
+            background-color: rgb(0, 0, 0) !important;
+            color: #f0f0f0;
         }
 
         .socialCol img {
@@ -55,7 +83,8 @@
                 margin-top: 10px !important;
             }
 
-            #contact-btn {
+            #contact-btn,
+            #download-btn {
                 margin: 0;
             }
 
@@ -79,6 +108,15 @@
 
             div.col:nth-child(2) {
                 padding-top: 10% !important;
+            }
+
+            div.img-fluid {
+                padding: 0%;
+                margin: 0%;
+            }
+
+            #post-name-detail {
+                font-size: 22px;
             }
         }
     </style>

@@ -5,10 +5,14 @@
 
 {%block blog %}
 <div class="col-md-8 offset-md-2">
-    <h1 style="text-align: center;">{{ post.name }}</h1>
-    <img class="img-fluid rounded mx-auto d-block cool-shadow" src=" {{ post.image.url }}" alt="{{post.name}}">
+    <h1 id="post-name-detail" style="text-align: center;">{{ post.name }}</h1>
+    <!-- IMAGE -->
+    <img style="max-width: 50%;" class="img-fluid rounded mx-auto d-block cool-shadow" src=" {{ post.image.url }}"
+        alt="{{post.name}}">
     <br>
-    <small>
+
+    <!-- TEXT -->
+    <small style="font-size: small;">
         {{ post.created_on.date }} |&nbsp;
         Categories:&nbsp;
         {% for category in post.categories.all %}

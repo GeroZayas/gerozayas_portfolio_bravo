@@ -25,7 +25,7 @@ class ContactForm(forms.ModelForm):
             attrs={
                 "placeholder": "*Message..",
                 "class": "form-control",
-                "rows": 6,
+                "rows": 3,
             }
         ),
     )

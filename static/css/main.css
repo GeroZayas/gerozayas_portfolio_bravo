@@ -8,13 +8,8 @@ body {
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
 }
 
-#contact-btn {
-  background-color: rgb(225, 85, 84, 0.6);
-  color: #f0f0f0;
-}
-
 #contact-btn:hover {
-  background-color: rgba(151, 2, 2, 0.6);
+  background-color: rgb(151, 2, 2);
 }
 
 #gero-name:hover {
@@ -49,9 +44,9 @@ b {
   padding: 0px;
 }
 
-.center {
+/* .center {
   width: 80%;
-}
+} */
 
 @media (max-width: 600px) {
   .post-name {
