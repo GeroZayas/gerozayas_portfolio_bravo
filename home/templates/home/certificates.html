@@ -1,11 +1,11 @@
 {% load static %}
 
-<div class="certificates" style="width: 500px;">
+<div class="certificates" style="max-width: 400px;">
     <h2 style="text-align: center;">CERTIFICATES</h2>
     <hr class="hr " />
 
     <!--  Certificates Carousel-->
-    <div id="carouselExampleCaptions" class="carousel slide cool-shadow" style="max-width: 500px;">
+    <div id="carouselExampleCaptions" class="carousel slide cool-shadow" style="width: 500px;">
 
         <div class="carousel-inner">
 
@@ -14,9 +14,8 @@
             {% if certificate.is_active %}
 
             <div class="carousel-item {% if forloop.first %}active{% endif %} soft-borders">
-                <a href="{{certificate.certificate_link}}"><img style="max-width: 500px;"
-                        src="{{ certificate.certificate_image.url }}" class="d-block w-100 soft-borders"
-                        alt="{{certificate.title}}"></a>
+                <a href="{{certificate.certificate_link}}"><img src="{{ certificate.certificate_image.url }}"
+                        class="d-block w-100 soft-borders" alt="{{certificate.title}}"></a>
                 <div class="carousel-caption d-none d-md-block soft-borders">
                     <!-- <h4 class="certificate-title">{{certificate.title}}</h4> -->
                     <!-- <p class="certificate-title">{{certificate.description}}</p> -->
