@@ -28,7 +28,7 @@ if not DEBUG:
         "http://www.gerozayas.com",
     ]
 
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False
 
     SESSION_COOKIE_SECURE = True
 
