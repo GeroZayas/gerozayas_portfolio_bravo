@@ -9,7 +9,7 @@
     <h1>{{ category | title }}</h1>
     <hr>
     {% for post in posts %}
-    <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.name }}</a></h2>
+    <h4><a href="{% url 'blog_detail' post.pk%}">{{ post.name }}</a></h4>
 
     <small>
         {{ post.created_on.date }} |&nbsp;

@@ -25,15 +25,15 @@
     <h3>Leave a comment:</h3>
     <form action="/blog/{{ post.pk }}/" method="post">
         {% csrf_token %}
-        <div class="form-group">
+        <div style="padding-left: 0%;" class="form-group">
             {{ form.author }}
         </div>
-        <div class="form-group">
+        <div style="padding-left: 0%;" class="form-group">
             {{ form.body }}
         </div>
-        <button type="submit" class="btn btn-outline-dark border-0 cool-shadow project-btn">Submit</button>
+        <button style="margin: 10px; margin-left: 0%;" type="submit" class="btn btn-outline-dark border-0 cool-shadow project-btn contact-btn">Submit</button>
     </form>
-    <h3>Comments:</h3>
+    <h3 style="margin-top: 15px;">Comments:</h3>
     {% for comment in comments %}
     <p>
         On {{comment.created_on.date }}&nbsp;
