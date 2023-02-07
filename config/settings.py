@@ -23,12 +23,10 @@ DEBUG = False
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
         "https://pygero.up.railway.app",
-        "http://pygero.up.railway.app",
-        "https://*.railway.app",
-        "http://*.railway.app",
+        "https://www.gerozayas.com",
     ]
 
-    SECURE_SSL_REDIRECT = False
+    SECURE_SSL_REDIRECT = True
 
     SESSION_COOKIE_SECURE = True
 
@@ -37,6 +35,9 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 2, 592, 000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    
+    ALLOWED_HOSTS = [".gerozayas.com"]
+    
 
 # ---------------------  -------------------------------
 # CSRF_TRUSTED_ORIGINS = [
@@ -57,7 +58,7 @@ if not DEBUG:
 # SECURE_HSTS_PRELOAD = True
 # ---------------------  -------------------------------
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
