@@ -1,92 +1,179 @@
-{% extends './base.html' %} {% block home %}
-{% load static %}
+{% extends './base.html' %} {% block home %} {% load static %}
 
-
-<div style="text-align: center; max-width: 700px;" class="center">
-  <h1 class="hello">Hi, I'm <span id="gero-name"><b>Gero</b></span>,
-    <br> a
-    Python & Full
-    Stack Developer
+<div style="text-align: center; max-width: 700px" class="center">
+  <h1 class="hello">
+    Hi, I'm <span id="gero-name"><b>Gero</b></span
+    >, <br />
+    a Python & Full Stack Developer
   </h1>
 
-  <button id="download-btn" type="button" class="button-margin btn btn-outline-dark cool-shadow border-0">Download
-    <span style="color: rgb(225, 85, 84);">Resume</span></button>
+  <!-- <button
+    id="download-btn"
+    type="button"
+    class="button-margin btn btn-outline-dark cool-shadow border-0"
+  >
+    Download <span style="color: rgb(225, 85, 84)">Resume</span>
+  </button> -->
 
+  <!-- DOWNLOAD RESUME -->
+  <a
+    download="GeroZayasCV"
+    href="https://drive.google.com/file/d/1xJ2qXSLjFCLjRNlcd6_TvPI6lSagzbrw/view?usp=share_link"
+    class="button-margin btn btn-outline-dark cool-shadow border-0"
+    >Download <span style="color: rgb(225, 85, 84)">Resume</span></a
+  >
 
-  <a href="{% url 'home.contact' %}"><button id="contact-btn" type="button"
-      class="button-margin btn btn-outline-dark cool-shadow border-0 contact-btn">Contact</button></a>
-  <hr>
+  <a href="{% url 'home.contact' %}"
+    ><button
+      id="contact-btn"
+      type="button"
+      class="button-margin btn btn-outline-dark cool-shadow border-0 contact-btn"
+    >
+      Contact
+    </button></a
+  >
+  <hr />
 
-  <h5 style=" margin-left: auto; margin-right: auto; -ms-text-size-adjust: auto;">I’m a <b>hardworking
-      programmer</b> located in beautiful
-    Barcelona with a
-    passion for helping people and
-    companies to get the best possible outcome. <br>🗣️ Able to work in 🇬🇧 🇪🇸 🇩🇪 🇧🇷 🇮🇹 🇦🇩 </h5>
+  <h5 style="margin-left: auto; margin-right: auto; -ms-text-size-adjust: auto">
+    I’m a <b>hardworking programmer</b> located in beautiful Barcelona with a
+    passion for helping people and companies to get the best possible outcome.
+    <br />🗣️ Able to work in 🇬🇧 🇪🇸 🇩🇪 🇧🇷 🇮🇹 🇦🇩
+  </h5>
 
-  <a href="{% url 'porfolio.index' %}"><button id="portfolio-btn" type="button"
-      class="button-margin btn btn-outline-dark cool-shadow border-0"> &#127947; See My Projects!</button></a>
+  <a href="{% url 'porfolio.index' %}"
+    ><button
+      id="portfolio-btn"
+      type="button"
+      class="button-margin btn btn-outline-dark cool-shadow border-0"
+    >
+      &#127947; See My Projects!
+    </button></a
+  >
 </div>
 
-<div class=" center">
+<div class="center">
   <div class="container">
     <div class="row">
-      <div style="margin: 10px; padding: 0px;" class="col">
-        <h2 style="text-align: center;">CODING SKILLS</h2>
-        <hr>
+      <div style="margin: 10px; padding: 0px" class="col">
+        <h2 style="text-align: center">CODING SKILLS</h2>
+        <hr />
 
         <!-- PROGRAMMING SKILLS -->
-        <div style="max-width: 300px;" class="skills center card cool-shadow border-0 col">
+        <div
+          style="max-width: 300px"
+          class="skills center card cool-shadow border-0 col"
+        >
           <p></p>
-
 
           <!-- PYTHON SKILL -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-coding" style="width: 90%">Python 90%</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-coding"
+              style="width: 90%"
+            >
+              Python 90%
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- HTMl SKILL -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-coding" style="width: 85%">HTML 85%</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-coding"
+              style="width: 85%"
+            >
+              HTML 85%
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- CSS SKILL -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-coding" style="width: 85%">CSS 85%</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-coding"
+              style="width: 85%"
+            >
+              CSS 85%
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- DJANGO SKILL -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-coding" style="width: 70%">Django 70%</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-coding"
+              style="width: 70%"
+            >
+              Django 70%
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- JAVASCRIPT SKILL -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-coding" style="width: 70%">JavaScript 70%</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-coding"
+              style="width: 70%"
+            >
+              JavaScript 70%
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- C# SKILL -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-coding" style="width: 60%">C# 60%</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-coding"
+              style="width: 60%"
+            >
+              C# 60%
+            </div>
           </div>
           <p></p>
 
-
           <!-- LANGUAGE SKILLS -->
-
-
-
-
         </div>
       </div>
       <!--  -->
@@ -94,58 +181,122 @@
       <!--  -->
       <!--  -->
       <!-- LANGUAGE SKILLS -->
-      <div style="margin: 10px; padding: 0px;" class="col">
+      <div style="margin: 10px; padding: 0px" class="col">
+        <h2 style="text-align: center">LANGUAGES</h2>
+        <hr />
 
-        <h2 style="text-align: center;">LANGUAGES</h2>
-        <hr>
-
-        <div style="max-width: 300px;" class="skills center card cool-shadow border-0 col">
-
-
+        <div
+          style="max-width: 300px"
+          class="skills center card cool-shadow border-0 col"
+        >
           <p></p>
           <!-- Spanish-->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-languages" style="width: 100%">Spanish Native</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-languages"
+              style="width: 100%"
+            >
+              Spanish Native
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- English -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-languages" style="width: 95%">English C2</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-languages"
+              style="width: 95%"
+            >
+              English C2
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- Catalan-->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-languages" style="width: 80%">Catalan B2</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-languages"
+              style="width: 80%"
+            >
+              Catalan B2
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- German -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-languages" style="width: 60%">German B1</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-languages"
+              style="width: 60%"
+            >
+              German B1
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- Portuguese -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-languages" style="width: 60%">Portuguese B1</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-languages"
+              style="width: 60%"
+            >
+              Portuguese B1
+            </div>
           </div>
-          <hr class="hr " />
+          <hr class="hr" />
 
           <!-- Italian -->
-          <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar rounded-pill bg-gradient-languages" style="width:    60%">Italian B1</div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div
+              class="progress-bar rounded-pill bg-gradient-languages"
+              style="width: 60%"
+            >
+              Italian B1
+            </div>
           </div>
           <p></p>
-
-
         </div>
 
         <!--  -->
@@ -157,7 +308,6 @@
   </div>
 </div>
 
-
 <!-- ------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------ -->
@@ -165,8 +315,6 @@
 <!-- ------------------------------------------------------------------ -->
 
 {% include 'home/certificates.html' %}
-
-
 
 <!-- ------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------ -->
@@ -179,6 +327,5 @@
   <hr class="hr " />
 
 </div> -->
-
 
 {% endblock %}
