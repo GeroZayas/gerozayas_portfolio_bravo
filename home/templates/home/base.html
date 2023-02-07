@@ -135,6 +135,7 @@
 
 <body style="font-family:'Rubik', sans-serif;">
     <div>
+        {% include 'home/messages.html' %}
         {% include "home/header.html"%}
         {% block home%} {% endblock home%}
         {% block about %} {% endblock about %}
