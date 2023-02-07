@@ -1,35 +1,61 @@
 {% load static %}
 
-
 <!-- ================================
     Start Footer
     ================================= -->
-<footer style="margin: 0%;">
-    <div class="footerCol shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-        <div class="container">
-            <ul class="socialCol">
-                <li><a href="https://www.facebook.com/GeroZayas"><img src="{% static 'images/facebook.png' %}"
-                            alt="facebook_link"></a>
-                </li>
-                <li><a href="https://www.linkedin.com/in/gerardo-zayas-alvarez/"><img
-                            src="{% static 'images/linkedin.png' %}" alt="linkedin_link"></a></li>
-                <li><a href="https://www.instagram.com/gero_zayas/"><img src="{% static 'images/instagram.png' %}"
-                            alt="instagram_link"></a></li>
-                <li><a href="https://twitter.com/GrardEnrikke"><img src="{% static 'images/twitter.png' %}"
-                            alt="twitter_link"></a></li>
-                <li><a href="https://github.com/gerozayas"><img src="{% static 'images/github.png' %}"
-                            alt="github_link"></a>
-                </li>
-            </ul>
-            <div class="copyrightCol">
-                <p> ©
-                    <script type="text/javascript">
-                        document.write(new Date().getFullYear());
-                    </script> Designed and coded with &#10084; by Gero Zayas
-                </p>
-            </div>
-        </div>
+<footer style="margin: 0%">
+  <div class="footerCol shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+    <div class="container">
+      <ul class="socialCol">
+        <!-- facebook -->
+        <!-- <li>
+          <a href="https://www.facebook.com/GeroZayas"
+            ><img src="{% static 'images/facebook.png' %}" alt="facebook_link"
+          /></a>
+        </li> -->
+
+        <!-- linkedin -->
+        <li>
+          <a href="https://www.linkedin.com/in/gerardo-zayas-alvarez/"
+            ><img src="{% static 'images/linkedin.png' %}" alt="linkedin_link"
+          /></a>
+        </li>
+
+        <!-- instagram -->
+        <!-- <li>
+          <a href="https://www.instagram.com/gero_zayas/"
+            ><img
+              src="{% static 'images/instagram.png' %}"
+              alt="instagram_link"
+          /></a>
+        </li> -->
+
+        <!-- twitter -->
+        <li>
+          <a href="https://twitter.com/GrardEnrikke"
+            ><img src="{% static 'images/twitter.png' %}" alt="twitter_link"
+          /></a>
+        </li>
+
+        <!-- github -->
+        <li>
+          <a href="https://github.com/gerozayas"
+            ><img src="{% static 'images/github.png' %}" alt="github_link"
+          /></a>
+        </li>
+
+      </ul>
+      <div class="copyrightCol">
+        <p>
+          ©
+          <script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script>
+          Designed and coded with &#10084; by Gero Zayas
+        </p>
+      </div>
     </div>
+  </div>
 </footer>
 
 <!-- end of footer -->
