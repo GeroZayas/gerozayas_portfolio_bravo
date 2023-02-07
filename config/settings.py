@@ -23,7 +23,9 @@ DEBUG = False
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
         "https://pygero.up.railway.app",
+        "http://pygero.up.railway.app",
         "https://www.gerozayas.com",
+        "http://www.gerozayas.com",
     ]
 
     SECURE_SSL_REDIRECT = True
