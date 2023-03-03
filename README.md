@@ -1,6 +1,4 @@
-# Gero Zayas Personal Website | Portfolio 
-
-## FIND ME AT: www.gerozayas.com
+# Gero Zayas Personal Website | Portfolio | www.gerozayas.com
 
 ### I’m a hardworking programmer located in beautiful Barcelona with a passion for helping people and companies to get the best possible outcome.
 🗣️ Able to work in 🇬🇧 🇪🇸 🇩🇪 🇧🇷 🇮🇹 🇦🇩 
