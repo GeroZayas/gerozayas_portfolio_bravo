@@ -37,9 +37,9 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 2, 592, 000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-    
+
     ALLOWED_HOSTS = [".gerozayas.com"]
-    
+
 
 # ---------------------  -------------------------------
 # CSRF_TRUSTED_ORIGINS = [
@@ -60,7 +60,7 @@ if not DEBUG:
 # SECURE_HSTS_PRELOAD = True
 # ---------------------  -------------------------------
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
