@@ -27,7 +27,10 @@
         <label style="margin-top: 15px;"><b> &#128222 WhatsApp / Phone: </b>+34 684 21 74 45</label><br>
         <label style="margin-top: 15px;"><b> &#127760 LinkedIn: </b><a href="https://www.linkedin.com/in/gerardo-zayas-alvarez/">https://www.linkedin.com/in/gerardo-zayas-alvarez/</a></label>
         <hr>
-        <h5>👋 Or leave me a message and I'll contact you as soon as possible:</h5>
+
+        {% comment %} I am deactivating this Feb 27, 2024, because I have made the change from online postgresql
+        to local sqlite3, so this isn dynamic anymore, as it wasn't needed {% endcomment %}
+        {% comment %} <h5>👋 Or leave me a message and I'll contact you as soon as possible:</h5>
         <form id="contactForm" method="POST" action="/contact/">
             {% csrf_token %}
             <label style="margin-top: 15px;" for="name"><b>Name</b></label>
@@ -41,7 +44,7 @@
 
             <input style="margin-top: 15px;" class='btn btn-outline-dark border-0 cool-shadow project-btn contact-btn' type="submit"
                 value="Submit">
-        </form>
+        </form> {% endcomment %}
 
     </div>
 </section>
