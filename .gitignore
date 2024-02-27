@@ -1,5 +1,6 @@
 env_portfolio_bravo/
 config/.env
+env_ubuntu/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/django

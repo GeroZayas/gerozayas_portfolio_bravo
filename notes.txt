@@ -1,55 +1,7 @@
-TEMP NOTES (15/01/2023)
+TEMP NOTES (27 / FEB/ 2024)
 --------------------------
 
-TODO: Featured Work add that
+TODO: Fix link to my resume 
 
-TODO: Add more info, more specificity to the ABOUT page
+------------------------------------------------------------ 
 
-------------------------------------------------------------
-
-FIXME: Change the look of Skills and Languages
-
-------------------------------------------------------------
-
-
-for PROJECTS:
-    - idea -> add the utility of each project and what I learned or improved by completing it
-
-    - improve the description of every project
-------------------------------------------------------------
-
-- create the one page resume (use the models, webs for that)
-------------------------------------------------------------
-
-for SKILLS
-    -Python 90%
-    -HTML 85%
-    -CSS 85%
-    -Django 70%
-    -JavaScript 70%
-
-Languages:
-    -Spanish Native
-    -English C2
-    -Catalan B2
-    -German B1
-    -Portuguese B1
-    -Italian B1
-
-use: 
-https://getbootstrap.com/docs/5.3/components/progress/
-
-------------------------------------------------------------
-
-NOTE: OJO -> when my site is alive and running online -> put it on LinkedIn
-
-------------------------------------------------------------
- WORK FLOW for Blog Posts
-
- - ChatGPT -> i ask it for a blog post on something interesting and useful
-
- - I generate an image with Dalle (https://dalle.pynecone.app/), for example, or other 
-
- - I Fix and imrpove the Image on Figma
-
- - I Upload everything to my Django Admin Blog Page
