@@ -22,7 +22,7 @@
         {% endfor %}
     </small>
     <p>{{ post.body | safe }}</p>
-    <h3>Leave a comment:</h3>
+    {% comment %} <h3>Leave a comment:</h3>
     <form action="/blog/{{ post.pk }}/" method="post">
         {% csrf_token %}
         <div style="padding-left: 0%;" class="form-group">
@@ -41,7 +41,7 @@
     </p>
     <p>{{ comment.body }}</p>
     <hr>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 </div>
 
 {%endblock blog %}
