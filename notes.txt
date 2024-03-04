@@ -1,9 +1,4 @@
 TEMP NOTES (4 / MAR/ 2024)
---------------------------
-
-TODO: Fix link to my resume 
-TODO: Add new projects to protfolio
-
 ------------------------------------------------------------ 
 
 Right Now (March 4, 2024):
@@ -12,4 +7,5 @@ Right Now (March 4, 2024):
     - TODO: ADD Google-Calendar-PySimpleGui
     - TODO: ADD Best English Resources Website
         - Add a nice Readme page with pictures and maybe video (youtube video link)
+    - FIXME: Resume stuff
             
