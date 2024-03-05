@@ -3,7 +3,6 @@ TEMP NOTES (4 / MAR/ 2024)
 
 Right Now (March 4, 2024):
 - Working on adding new projects to portfolio
-    - TODO: ADD OpenAi Language Learning Assistant
     - TODO: ADD Google-Calendar-PySimpleGui
     - TODO: ADD Best English Resources Website
         - Add a nice Readme page with pictures and maybe video (youtube video link)
