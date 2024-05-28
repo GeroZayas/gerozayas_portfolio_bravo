@@ -1,52 +1,59 @@
 {% load static %}
 
-<div class="certificates" style="max-width: 400px;">
-    <h2 style="text-align: center;">CERTIFICATES</h2>
-    <hr class="hr " />
+<div class="certificates" style="max-width: 400px">
+  <h2 style="text-align: center">CERTIFICATIONS</h2>
+  <hr class="hr" />
 
-    <!--  Certificates Carousel-->
-    <div id="carouselExampleCaptions" class="carousel slide cool-shadow" style="width: 500px;">
+  <!--  Certificates Carousel-->
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide cool-shadow"
+    style="width: 500px"
+  >
+    <div class="carousel-inner">
+      {% for certificate in certificates %} {% if certificate.is_active %}
 
-        <div class="carousel-inner">
-
-            {% for certificate in certificates %}
-
-            {% if certificate.is_active %}
-
-            <div class="carousel-item {% if forloop.first %}active{% endif %} soft-borders">
-                <a href="{{certificate.certificate_link}}"><img src="{{ certificate.certificate_image.url }}"
-                        class="d-block w-100 soft-borders" alt="{{certificate.title}}"></a>
-                <div class="carousel-caption d-none d-md-block soft-borders">
-                    <!-- <h4 class="certificate-title">{{certificate.title}}</h4> -->
-                    <!-- <p class="certificate-title">{{certificate.description}}</p> -->
-                </div>
-            </div>
-
-            {% endif %}
-            {% endfor %}
-
-
-
+      <div
+        class="carousel-item {% if forloop.first %}active{% endif %} soft-borders"
+      >
+        <a href="{{certificate.certificate_link}}"
+          ><img
+            src="{{ certificate.certificate_image.url }}"
+            class="d-block w-100 soft-borders"
+            alt="{{certificate.title}}"
+        /></a>
+        <div class="carousel-caption d-none d-md-block soft-borders">
+          <!-- <h4 class="certificate-title">{{certificate.title}}</h4> -->
+          <!-- <p class="certificate-title">{{certificate.description}}</p> -->
         </div>
+      </div>
 
-
-        <button style=" background-color: rgb(0, 0, 0, 0.1); max-width: 30px;"
-            class=" carousel-control-prev soft-borders" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button style=" background-color: rgb(0, 0, 0, 0.1); max-width: 30px;"
-            class="carousel-control-next soft-borders" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+      {% endif %} {% endfor %}
     </div>
 
-    <!--  -->
+    <button
+      style="background-color: rgb(0, 0, 0, 0.1); max-width: 30px"
+      class="carousel-control-prev soft-borders"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      style="background-color: rgb(0, 0, 0, 0.1); max-width: 30px"
+      class="carousel-control-next soft-borders"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-
+  <!--  -->
 </div>
 <!-- ------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------ -->
