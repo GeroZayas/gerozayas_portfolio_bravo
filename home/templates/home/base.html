@@ -89,9 +89,18 @@
           max-width: 300px;
         }
 
+        .projects_carousel {
+          max-width: 300px;
+        }
+
         #carouselExampleCaptions {
           width: 300px !important;
         }
+
+        #carouselExampleFade {
+          width: 300px !important;
+        }
+
 
         #contact-btn,
         #download-btn {
@@ -142,8 +151,9 @@
       {% block about %} {% endblock about %} 
       {%block blog %} {% endblock blog %} 
       {% block portfolio %} {% endblock portfolio%} 
-      {% block contact %} {% endblock contact%} {% block project_detail_content %}
-      {% endblock project_detail_content%} {% include "home/footer.html"%}
+      {% block contact %} {% endblock contact%} 
+      {% block project_detail_content %} {% endblock project_detail_content%} 
+      {% include "home/footer.html"%}
     </div>
 
     <script src="{% static 'script.js' %}"></script>
