@@ -1,0 +1,62 @@
+{% load static %}
+
+<div class="projects_carousel" style="max-width: 400px">
+  <hr class="hr" />
+  <h5 style="text-align: center">A quick peek at some projects</h5>
+
+  <!--  Certificates Carousel-->
+  <div
+    id="carouselExampleFade"
+    class="carousel slide carousel-fade"
+    style="width: 500px"
+  >
+    <div class="carousel-inner">
+      {% for portfolio in portfolio_projects %} {% if portfolio.is_active %}
+
+      <div
+        class="carousel-item {% if forloop.first %}active{% endif %} soft-borders"
+      >
+        <a href="{{portfolio.get_url}}"
+          ><img
+            src="{{ portfolio.image.url }}"
+            class="d-block w-100 soft-borders"
+            alt="{{portfolio.title}}"
+        /></a>
+        <div class="carousel-caption d-none d-md-block soft-borders">
+          <!-- <h4 class="certificate-title">{{certificate.title}}</h4> -->
+          <!-- <p class="certificate-title">{{certificate.description}}</p> -->
+        </div>
+      </div>
+
+      {% endif %} {% endfor %}
+    </div>
+
+    <button
+      style="background-color: rgb(0, 0, 0, 0.1); max-width: 30px"
+      class="carousel-control-prev soft-borders"
+      type="button"
+      data-bs-target="#carouselExampleFade"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      style="background-color: rgb(0, 0, 0, 0.1); max-width: 30px"
+      class="carousel-control-next soft-borders"
+      type="button"
+      data-bs-target="#carouselExampleFade"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!--  -->
+</div>
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
