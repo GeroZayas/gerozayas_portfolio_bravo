@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.views import generic
 
 from .models import Certificate
+from portfolio.models import Project
 
 # Create your views here.
 # def home(request):
@@ -37,8 +38,10 @@ class IndexView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
 
         certificates = Certificate.objects.filter(is_active=True)
+        portfolio_projects = Project.objects.filter(is_active=True)
 
         context["certificates"] = certificates
+        context["portfolio_projects"] = portfolio_projects
         return context
 
 

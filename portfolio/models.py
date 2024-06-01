@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
 
+
 # Create your models here.
 class Project(models.Model):
     class Meta:
@@ -31,3 +32,6 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return f"/portfolio/{self.slug}"
+
+    def get_url(self):
+        return f"/portfolio/{self.id}"
