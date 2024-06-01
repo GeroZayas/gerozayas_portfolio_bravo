@@ -1,11 +1,11 @@
-{% extends './base.html' %} 
-{% block home %} 
-{% load static %}
+{% extends './base.html' %} {% block home %} {% load static %}
 
 <div style="text-align: center; max-width: 700px" class="center">
   <h1 class="hello">
-    Hi, I'm <span id="gero-name"><b>Gero Zayas</b></span
-    > <br/> a <span style="color:rgb(238, 203, 3); font-weight: 700;">creative</span> Python Software Engineer<br />
+    Hi, I'm <span id="gero-name"><b>Gero Zayas</b></span> <br />
+    a
+    <span style="color: rgb(238, 203, 3); font-weight: 700">creative</span>
+    Python Software Engineer<br />
   </h1>
 
   <!-- <button
@@ -40,23 +40,38 @@
     passion for helping people and companies to get the best possible outcome.
     <br />🗣️ Able to work in 🇬🇧 🇪🇸 🇩🇪 🇧🇷 🇮🇹 🇦🇩
   </h5>
-
+  {% comment %} PROJECT LINK {% endcomment %}
   <a href="{% url 'porfolio.index' %}"
     ><button
       id="portfolio-btn"
       type="button"
       class="button-margin btn btn-outline-dark cool-shadow border-0"
     >
-      &#127947; See my projects!
+      ⭐ Full List of Projects ⭐
     </button></a
   >
+  {% comment %} END OF PROJECT LINK {% endcomment %}
 </div>
+
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+
+{% include 'home/projects_carousel.html' %}
+
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------ -->
 
 <div class="center">
   <div class="container">
     <div class="row">
       <div style="margin: 10px; padding: 0px" class="col">
-        <h2 style="text-align: center">CODING SKILLS</h2>
+        <h2 style="text-align: center">Programming Languages & Skills</h2>
         <hr />
 
         <!-- PROGRAMMING SKILLS -->
@@ -183,7 +198,7 @@
       <!--  -->
       <!-- LANGUAGE SKILLS -->
       <div style="margin: 10px; padding: 0px" class="col">
-        <h2 style="text-align: center">LANGUAGES</h2>
+        <h2 style="text-align: center">Natural languages</h2>
         <hr />
 
         <div
