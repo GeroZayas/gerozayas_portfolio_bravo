@@ -17,13 +17,22 @@
   </button> -->
 
   <!-- DOWNLOAD RESUME -->
-  <a
+
+  <!-- WITH LINK TO RXSESU.ME -->
+  <!-- <a
     download="GeroZayasCV"
-    href="https://rxresu.me/gerozayas/python-full-stack-developer-entry-level"
+    href="https://rxresu.me/gerozayas/python-full-stack-developer"
+    class="button-margin btn btn-outline-dark cool-shadow border-0"
+    >Download <span style="color: rgb(225, 85, 84)">Resume</span></a
+  > -->
+
+  <!-- WITH DIRECT DOWNLOAD -->
+  <a
+    download="Gerardo Zayas Python & Full Stack Developer"
+    href="{% static 'CV_Gero_Zayas/Gerardo Zayas Python & Full Stack Developer.pdf' %}"
     class="button-margin btn btn-outline-dark cool-shadow border-0"
     >Download <span style="color: rgb(225, 85, 84)">Resume</span></a
   >
-
   <a href="{% url 'home.contact' %}"
     ><button
       id="contact-btn"
