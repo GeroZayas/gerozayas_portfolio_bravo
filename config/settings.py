@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from decouple import config
 
 # import environ
 
@@ -13,12 +14,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-l8kju2g*suqh!8n^4%mksgr^a2q7rlitobt%+(bv3ia043-zt1"
+# SECRET_KEY = "django-insecure-l8kju2g*suqh!8n^4%mksgr^a2q7rlitobt%+(bv3ia043-zt1"
+SECRET_KEY = config("SECRET_KEY")
 # SECRET_KEY = env("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 if not DEBUG:
     CSRF_TRUSTED_ORIGINS = [
@@ -59,8 +62,8 @@ if not DEBUG:
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
 # ---------------------  -------------------------------
-
-ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -168,6 +171,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Update database configuration from $DATABASE_URL.
 """import dj_database_url
