@@ -182,4 +182,4 @@ cython_debug/
 *.bak
 
 # Database
-*.sqlite3
+*.sqlite3config/.env
