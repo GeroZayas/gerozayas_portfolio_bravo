@@ -1,6 +1,23 @@
 # Generated manually to add missing fields to existing database
 
 from django.db import migrations, models
+from django.db import connection
+
+
+def add_slug_if_not_exists(apps, schema_editor):
+    """Add slug field to Category only if it doesn't exist"""
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT column_name 
+            FROM information_schema.columns 
+            WHERE table_name='blog_category' AND column_name='slug'
+        """)
+        if not cursor.fetchone():
+            # Column doesn't exist, add it
+            cursor.execute("""
+                ALTER TABLE blog_category 
+                ADD COLUMN slug VARCHAR(20) NULL UNIQUE
+            """)
 
 
 class Migration(migrations.Migration):
@@ -10,12 +27,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        # Add slug field to Category
-        migrations.AddField(
-            model_name='category',
-            name='slug',
-            field=models.SlugField(max_length=20, null=True, unique=True),
-        ),
+        # Add slug field to Category (only if doesn't exist)
+        migrations.RunPython(add_slug_if_not_exists, migrations.RunPython.noop),
         
         # Alter Post slug to be unique
         migrations.AlterField(
