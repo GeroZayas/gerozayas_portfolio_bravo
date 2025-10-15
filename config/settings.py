@@ -128,7 +128,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-if DATABASE_URL:
+# Check if DATABASE_URL exists and is not empty
+if DATABASE_URL and DATABASE_URL.strip():
     # Production: Use Railway's Postgres database
     import dj_database_url
     DATABASES = {
