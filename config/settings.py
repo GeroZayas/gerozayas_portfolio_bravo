@@ -3,6 +3,8 @@ import os
 
 # from decouple import config
 
+# from decouple import config
+
 import environ
 
 env = environ.Env()
@@ -17,8 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-l8kju2g*suqh!8n^4%mksgr^a2q7rlitobt%+(bv3ia043-zt1"
 # SECRET_KEY = config("SECRET_KEY")
+# SECRET_KEY = config("SECRET_KEY")
 SECRET_KEY = env("SECRET_KEY")
 
+# New update
 # New update
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -43,7 +47,9 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
+
     ALLOWED_HOSTS = [".gerozayas.com"]
+
 
 
 # ---------------------  -------------------------------
@@ -64,6 +70,8 @@ if not DEBUG:
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
 # ---------------------  -------------------------------
+else:
+    ALLOWED_HOSTS = ["*"]
 else:
     ALLOWED_HOSTS = ["*"]
 
@@ -218,8 +226,14 @@ SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = "DENY"
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
 # Update database configuration from $DATABASE_URL.
+"""import dj_database_url
 """import dj_database_url
 
 db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES["default"].update(db_from_env)"""
 DATABASES["default"].update(db_from_env)"""
