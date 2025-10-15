@@ -25,7 +25,8 @@ SECRET_KEY = env("SECRET_KEY")
 # New update
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False  # Production mode - Redis caching enabled
+# Temporarily enable DEBUG to see errors
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 # DEBUG = config("DEBUG", default=False, cast=bool)
 
 if not DEBUG:
@@ -147,8 +148,6 @@ else:
 # Use Redis only in production (when DEBUG=False)
 if not DEBUG:
     REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1')
-    print(f"🔍 DEBUG: REDIS_URL = {REDIS_URL}")  # Debug output
-    print(f"🔍 DEBUG: All env vars with REDIS: {[k for k in os.environ.keys() if 'REDIS' in k.upper()]}")  # Debug
     CACHES = {
         'default': {
             'BACKEND': 'django_redis.cache.RedisCache',
@@ -229,6 +228,40 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Logging Configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
 
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = "DENY"
