@@ -6,7 +6,10 @@ import os
 import environ
 
 env = environ.Env()
-environ.Env.read_env()
+# Only read .env file if it exists (local development)
+# Railway uses native environment variables
+if os.path.exists(os.path.join(Path(__file__).resolve().parent, '.env')):
+    environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,23 +125,34 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+if DATABASE_URL:
+    # Production: Use Railway's Postgres database
+    import dj_database_url
+    DATABASES = {
+        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+    }
+else:
+    # Local development: Use SQLite
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Redis Caching Configuration
 # Use Redis only in production (when DEBUG=False)
 if not DEBUG:
+    REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1')
+    print(f"🔍 DEBUG: REDIS_URL = {REDIS_URL}")  # Debug output
+    print(f"🔍 DEBUG: All env vars with REDIS: {[k for k in os.environ.keys() if 'REDIS' in k.upper()]}")  # Debug
     CACHES = {
         'default': {
             'BACKEND': 'django_redis.cache.RedisCache',
-            'LOCATION': os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1'),
+            'LOCATION': REDIS_URL,
             'OPTIONS': {
                 'CLIENT_CLASS': 'django_redis.client.DefaultClient',
                 'CONNECTION_POOL_CLASS_KWARGS': {
