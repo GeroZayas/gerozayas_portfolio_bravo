@@ -1,34 +1,40 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views.decorators.cache import cache_page
 from blog.models import Post, Comment
 from blog.forms import CommentForm
 
-# Create your views here.
-# def blog(request):
-#     # Render app template with context
-#     return render(
-#         request,
-#         r"C:\Users\Gero Zayas\Downloads\CODING\Django\django-alpha\blog\templates\blog\blog_index.html",
-#     )
 
-
+@cache_page(60 * 15)  # Cache for 15 minutes
 def blog_index(request):
-    posts = Post.objects.all().order_by("-created_on")
-    context = {
-        "posts": posts,
-    }
+    """Display all active blog posts with optimized queries."""
+    posts = Post.objects.filter(
+        is_active=True
+    ).prefetch_related('categories').order_by("-created_on")
+    
+    context = {"posts": posts}
     return render(request, "blog/blog_index.html", context)
 
 
+@cache_page(60 * 15)  # Cache for 15 minutes
 def blog_category(request, category):
-    posts = Post.objects.filter(categories__name__contains=category).order_by(
-        "-created_on"
-    )
+    """Display blog posts filtered by category with optimized queries."""
+    posts = Post.objects.filter(
+        categories__name__contains=category,
+        is_active=True
+    ).prefetch_related('categories').order_by("-created_on")
+    
     context = {"category": category, "posts": posts}
     return render(request, "blog/blog_category.html", context)
 
 
+@cache_page(60 * 60)  # Cache for 1 hour
 def blog_detail(request, pk):
-    post = Post.objects.get(pk=pk)
+    """Display single blog post with comments."""
+    post = get_object_or_404(
+        Post.objects.prefetch_related('categories'),
+        pk=pk,
+        is_active=True
+    )
 
     form = CommentForm()
     if request.method == "POST":
@@ -41,7 +47,7 @@ def blog_detail(request, pk):
             )
             comment.save()
 
-    comments = Comment.objects.filter(post=post)
+    comments = Comment.objects.filter(post=post).order_by('-created_on')
     context = {
         "post": post,
         "comments": comments,

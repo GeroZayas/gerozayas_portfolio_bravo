@@ -22,7 +22,7 @@ SECRET_KEY = env("SECRET_KEY")
 # New update
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = False  # Production mode - Redis caching enabled
 # DEBUG = config("DEBUG", default=False, cast=bool)
 
 if not DEBUG:
@@ -39,7 +39,7 @@ if not DEBUG:
 
     CSRF_COOKIE_SECURE = True
 
-    SECURE_HSTS_SECONDS = 2, 592, 000
+    SECURE_HSTS_SECONDS = 2592000  # 30 days
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
@@ -128,6 +128,46 @@ DATABASES = {
 }
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+
+# Redis Caching Configuration
+# Use Redis only in production (when DEBUG=False)
+if not DEBUG:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django_redis.cache.RedisCache',
+            'LOCATION': env('REDIS_URL', default='redis://127.0.0.1:6379/1'),
+            'OPTIONS': {
+                'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+                'CONNECTION_POOL_CLASS_KWARGS': {
+                    'max_connections': 50,
+                    'retry_on_timeout': True,
+                },
+                'SOCKET_CONNECT_TIMEOUT': 5,
+                'SOCKET_TIMEOUT': 5,
+            },
+            'KEY_PREFIX': 'portfolio',
+            'TIMEOUT': 300,  # 5 minutes default
+        }
+    }
+else:
+    # Use simple in-memory cache for local development
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'unique-snowflake',
+        }
+    }
+
+# Cache template rendering in production
+if not DEBUG:
+    TEMPLATES[0]['APP_DIRS'] = False  # Must be False when using custom loaders
+    TEMPLATES[0]['OPTIONS']['loaders'] = [
+        ('django.template.loaders.cached.Loader', [
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        ]),
+    ]
 
 
 # Password validation
