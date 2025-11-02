@@ -1,14 +1,19 @@
 {% extends './base.html' %} {% block home %} {% load static %}
 
-<!-- Hero Section with Nature-Inspired Gradient Background -->
-<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-charcoal via-persian_green to-burnt_sienna overflow-hidden">
+<!-- Hero Section with Vanta.js Animated Background -->
+<section id="hero-bg" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Vanta.js will create the animated background here -->
+  
+  <!-- Gradient Overlay for better text readability -->
+  <div class="absolute inset-0 bg-gradient-to-br from-charcoal/80 via-persian_green/60 to-burnt_sienna/80 z-10"></div>
+  
   <!-- Animated Background Elements -->
-  <div class="absolute inset-0 overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden z-0">
     <div class="absolute -top-40 -right-40 w-80 h-80 bg-saffron opacity-10 rounded-full blur-3xl animate-pulse"></div>
     <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-sandy_brown opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
   </div>
   
-  <div class="container mx-auto px-6 py-20 relative z-10">
+  <div class="container mx-auto px-6 py-20 relative z-20">
     <div class="max-w-4xl mx-auto text-center">
       <!-- Main Heading with Animation -->
       <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight animate-fade-in-up">
@@ -221,5 +226,20 @@
     overflow: hidden;
   }
 </style>
+
+<!-- Vanta.js Initialization -->
+<script>
+  VANTA.WAVES({
+    el: "#hero-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    color: 0x264653,  // Charcoal color from your palette
+    waveHeight: 15,
+    shininess: 30,
+    waveSpeed: 1.0,
+    zoom: 0.75
+  });
+</script>
 
 {% endblock home %}
