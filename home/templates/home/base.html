@@ -11,28 +11,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- PERSONAL CSS STYLES -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#e15554',
+              secondary: '#667eea',
+              accent: '#f7d239',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
     
     <title>Gero Zayas Portfolio</title>
   </head>
 
-  <body>
-    <div class="container">
-      {% include 'home/messages.html' %} 
-      {% include "home/header.html" %} 
-      {%block home%} {% endblock home%} 
-      {% block about %} {% endblock about %} 
-      {%block blog %} {% endblock blog %} 
-      {% block portfolio %} {% endblock portfolio%}
-      {% block contact %} {% endblock contact%}
-      {% block project_detail_content%} {% endblock project_detail_content%} 
-      {% include "home/footer.html" %}
-    </div>
+  <body class="bg-gray-50 font-sans">
+    {% include 'home/messages.html' %} 
+    {% include "home/header.html" %} 
+    {%block home%} {% endblock home%} 
+    {% block about %} {% endblock about %} 
+    {%block blog %} {% endblock blog %} 
+    {% block portfolio %} {% endblock portfolio%}
+    {% block contact %} {% endblock contact%}
+    {% block project_detail_content%} {% endblock project_detail_content%} 
+    {% include "home/footer.html" %}
 
     <script src="{% static 'script.js' %}"></script>
   </body>
