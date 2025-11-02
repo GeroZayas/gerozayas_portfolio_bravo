@@ -23,12 +23,17 @@
         <div class="order-2 lg:order-1">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl transform rotate-6"></div>
-            <img 
-              src="{% static 'images/New-Profile-Pic-Gero.jpg' %}" 
-              alt="Gero Zayas"
-              class="relative w-full rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-gray-400 text-8xl\'>👤</div>'"
-            >
+            <picture>
+              <source srcset="{% static 'images/optimized/profile/about-pic.jpg.webp' %}" type="image/webp">
+              <img 
+                src="{% static 'images/optimized/profile/about-pic.jpg' %}" 
+                alt="Gero Zayas"
+                class="relative w-full rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+                loading="lazy" 
+                decoding="async"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-gray-400 text-8xl\'>👤</div>'"
+              >
+            </picture>
           </div>
         </div>
 

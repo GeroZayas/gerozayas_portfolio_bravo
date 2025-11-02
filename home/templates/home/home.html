@@ -1,4 +1,4 @@
-{% extends './base.html' %} {% block home %} {% load static %}
+{% extends './base.html' %} {% block home %} {% load static %} {% load image_filters %}
 
 <!-- Hero Section with Vanta.js Animated Background -->
 <section id="hero-bg" class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -86,12 +86,7 @@
       <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
         {% if project.image %}
         <div class="relative h-48 overflow-hidden bg-gradient-to-br from-persian_green to-burnt_sienna">
-          <img 
-            src="{{ project.image.url }}" 
-            alt="{{ project.title }}"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-            onerror="this.style.display='none'"
-          >
+          {% optimized_image_tag project.image.url project.title "w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" %}
         </div>
         {% endif %}
         

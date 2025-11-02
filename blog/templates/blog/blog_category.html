@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 
 {% load static %}
+{% load image_filters %}
 
 {%block blog %}
 
@@ -37,12 +38,7 @@
         <!-- Post Image -->
         <div class="relative h-48 overflow-hidden bg-gradient-to-br from-secondary to-primary">
           {% if post.image %}
-          <img 
-            src="{{ post.image.url }}" 
-            alt="{{ post.name }}"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-white text-6xl\'>📄</div>'"
-          >
+          {% optimized_image_tag post.image.url post.name "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" %}
           {% else %}
           <div class="flex items-center justify-center h-full text-white text-6xl">📄</div>
           {% endif %}

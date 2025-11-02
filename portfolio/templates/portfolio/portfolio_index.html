@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 
 {% load static %}
+{% load image_filters %}
 
 {% block portfolio %}
 
@@ -24,12 +25,7 @@
       <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
         <!-- Project Image -->
         <div class="relative h-56 overflow-hidden bg-gradient-to-br from-secondary to-primary">
-          <img 
-            src="{{ project.image.url }}" 
-            alt="{{ project.title }}"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-white text-6xl\'>📁</div>'"
-          >
+          {% optimized_image_tag project.image.url project.title "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" %}
           <!-- Overlay on hover -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>

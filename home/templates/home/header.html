@@ -5,11 +5,16 @@
     <div class="flex items-center justify-between py-4">
       <!-- Logo/Brand -->
       <a href="{% url 'home.home' %}" class="flex items-center gap-3 group">
-        <img 
-          src="{% static 'images/profile-pic.png' %}" 
-          alt="Gero Zayas" 
-          class="w-12 h-12 rounded-full ring-2 ring-persian_green/20 group-hover:ring-persian_green/50 transition-all duration-300"
-        >
+        <picture>
+            <source srcset="{% static 'images/optimized/profile/profile-pic.jpg.webp' %}" type="image/webp">
+            <img src="{% static 'images/optimized/profile/profile-pic.jpg' %}" 
+                 alt="Gero Zayas" 
+                 class="w-10 h-10 rounded-full object-cover border-2 border-persian_green"
+                 loading="lazy" 
+                 decoding="async"
+                 width="40" 
+                 height="40">
+          </picture>
         <span class="text-xl font-bold text-charcoal group-hover:text-persian_green transition-colors">
           Gero Zayas
         </span>
