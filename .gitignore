@@ -12,8 +12,6 @@ env_ubuntu/
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 media
 # Exception: commit blog cover images
 !media/blog/
@@ -184,5 +182,5 @@ cython_debug/
 # Text backup files
 *.bak
 
-# Database
-*.sqlite3config/.env
+# Database - SQLite is now tracked for deployment
+# *.sqlite3
