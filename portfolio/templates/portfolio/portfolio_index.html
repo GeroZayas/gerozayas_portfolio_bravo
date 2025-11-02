@@ -2,39 +2,99 @@
 
 {% load static %}
 
-{%block portfolio %}
+{% block portfolio %}
 
-<div class="center">
-    <h1 style="text-align: center;">Portfolio &#127947</h1>
-    <hr>
-    <div class="row">
-        {% for project in projects %}
-
-        {% if project.is_active %}
-
-
-        <div class="col-md-4">
-            <div id="project-card" class="card mb-2 border-1">
-                <img class="card-img-top" src="{{ project.image.url }}" alt="{{ project.title }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ project.title }}</h5>
-                    <hr class="hr " />
-                    <p style="font-size: small;" class="card-text" id="project-description">{{ project.description }}
-                    </p>
-                    <a href="{% url 'portfolio:project_detail' project.pk %}"
-                        class="btn btn-outline-dark border-0 cool-shadow project-btn contact-btn">
-                        Read More
-                    </a>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% endfor %}
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+  <div class="container mx-auto px-6">
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+        Portfolio <span class="text-primary">🏆</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Explore my collection of projects showcasing various technologies and solutions
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6 rounded-full"></div>
     </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {% for project in projects %}
+      {% if project.is_active %}
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2">
+        <!-- Project Image -->
+        <div class="relative h-56 overflow-hidden bg-gradient-to-br from-secondary to-primary">
+          <img 
+            src="{{ project.image.url }}" 
+            alt="{{ project.title }}"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-white text-6xl\'>📁</div>'"
+          >
+          <!-- Overlay on hover -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        
+        <!-- Project Content -->
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+            {{ project.title }}
+          </h3>
+          
+          <p class="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed">
+            {{ project.description }}
+          </p>
+          
+          <!-- Technology Badge -->
+          <div class="mb-4">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-secondary/10 to-primary/10 text-secondary border border-secondary/20">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              {{ project.technology }}
+            </span>
+          </div>
+          
+          <!-- Action Button -->
+          <a 
+            href="{% url 'portfolio:project_detail' project.pk %}"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 w-full justify-center group"
+          >
+            <span>View Details</span>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Empty State -->
+    {% if not projects %}
+    <div class="text-center py-20">
+      <div class="text-6xl mb-4">📭</div>
+      <h3 class="text-2xl font-bold text-gray-900 mb-2">No projects yet</h3>
+      <p class="text-gray-600">Check back soon for exciting new projects!</p>
+    </div>
+    {% endif %}
+  </div>
 </div>
 
-
-
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
 
 {% endblock portfolio %}

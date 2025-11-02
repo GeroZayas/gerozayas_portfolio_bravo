@@ -1,34 +1,151 @@
 {% extends './base.html' %}
 {% load static %}
 
-
 {% block about %}
 
-<div class="center">
-    
-    <h1 style="text-align: center;">About &#128378</h1>
-    <hr>
-    <img class="cool-shadow" src="{% static 'images/New-Profile-Pic-Gero.jpg' %}" height="200"
-       alt="profile picture gero zayas" style="display: block; margin: 0 auto; border-radius: 10px; margin-bottom: 20px;" />
-       
-    <p>I’m a <b>Full Stack Python Developer</b> located in Barcelona. I have a serious passion for <b>Python</b> ,
-        <b>Web
-            Developement</b> and using the mighty power of programming <b>to solve real-world problems</b> and
-        <b>improve life
-            through technology</b>.
-    </p>
-    <p>
-        <b>Persistent</b>, <b>prolific</b>, <b>creative </b>person and <b>problem
-            solver</b> with
-        high attention to
-        detail and
-        utility. Fan of MMA,
-        travelling around the world, self-education, literature and clinical psychology.
-    </p>
-    <p>Interested in the entire software and web development spectrum and working on ambitious projects to continually
-        <b>grow</b> and <b>contribute</b>.
-    </p>
-    <p> <a href="{% url 'home.contact' %}">Let's work together and improve!</a></p>
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+  <div class="container mx-auto px-6">
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+        About Me <span class="text-primary">👨‍💻</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Get to know the person behind the code
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6 rounded-full"></div>
+    </div>
+
+    <!-- About Content -->
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Profile Image -->
+        <div class="order-2 lg:order-1">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl transform rotate-6"></div>
+            <img 
+              src="{% static 'images/New-Profile-Pic-Gero.jpg' %}" 
+              alt="Gero Zayas"
+              class="relative w-full rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-gray-400 text-8xl\'>👤</div>'"
+            >
+          </div>
+        </div>
+
+        <!-- About Text -->
+        <div class="order-1 lg:order-2 space-y-6">
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              Hi, I'm Gero!
+            </h2>
+            
+            <div class="prose prose-lg text-gray-700 space-y-4">
+              <p>
+                I'm a <span class="text-primary font-bold">Full Stack Python Developer</span> located in Barcelona. 
+                I have a serious passion for <span class="text-secondary font-bold">Python</span>, 
+                <span class="text-secondary font-bold">Web Development</span>, and using the mighty power of programming 
+                <span class="text-primary font-bold">to solve real-world problems</span> and 
+                <span class="text-primary font-bold">improve life through technology</span>.
+              </p>
+              
+              <p>
+                <span class="inline-flex items-center px-3 py-1 bg-primary/10 text-primary rounded-full font-medium mr-2">Persistent</span>
+                <span class="inline-flex items-center px-3 py-1 bg-secondary/10 text-secondary rounded-full font-medium mr-2">Prolific</span>
+                <span class="inline-flex items-center px-3 py-1 bg-accent/10 text-gray-800 rounded-full font-medium">Creative</span>
+                person and <span class="text-primary font-bold">problem solver</span> with 
+                high attention to detail and utility.
+              </p>
+              
+              <p>
+                Fan of MMA, travelling around the world, self-education, literature and clinical psychology.
+              </p>
+              
+              <p>
+                Interested in the entire software and web development spectrum and working on ambitious projects 
+                to continually <span class="text-primary font-bold">grow</span> and 
+                <span class="text-secondary font-bold">contribute</span>.
+              </p>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="mt-8">
+              <a 
+                href="{% url 'home.contact' %}"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Let's Work Together!
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills & Interests Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <!-- Technical Skills -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            Technical Skills
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-gray-700">Python / Django</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-secondary rounded-full"></div>
+              <span class="text-gray-700">JavaScript / React</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-accent rounded-full"></div>
+              <span class="text-gray-700">Database Design</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-gray-700">API Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Interests -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            Personal Interests
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🥋</span>
+              <span class="text-gray-700">MMA & Martial Arts</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">✈️</span>
+              <span class="text-gray-700">World Travel</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">📚</span>
+              <span class="text-gray-700">Literature & Psychology</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🎓</span>
+              <span class="text-gray-700">Self-Education</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
