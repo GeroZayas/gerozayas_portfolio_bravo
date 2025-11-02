@@ -26,7 +26,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 # Temporarily enable DEBUG to see errors
-DEBUG = True
+DEBUG = False
 # DEBUG = config("DEBUG", default=False, cast=bool)
 
 if not DEBUG:
@@ -48,7 +48,13 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
 
 
-    ALLOWED_HOSTS = [".gerozayas.com"]
+    ALLOWED_HOSTS = [
+        ".gerozayas.com",
+        "www.gerozayas.com",
+        "gerozayas.com",
+        "pygero.up.railway.app",
+        ".railway.app",
+    ]
 
 
 
