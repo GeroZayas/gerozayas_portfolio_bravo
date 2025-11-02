@@ -25,7 +25,7 @@
         <!-- Post Image -->
         <div class="relative h-48 overflow-hidden bg-gradient-to-br from-secondary to-primary">
           {% if post.image %}
-          {% optimized_image_tag post.image.url post.name "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" %}
+          <img src="{{ post.image.url }}" alt="{{ post.name }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
           {% else %}
           <div class="flex items-center justify-center h-full text-white text-6xl">📄</div>
           {% endif %}

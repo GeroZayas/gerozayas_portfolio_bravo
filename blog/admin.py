@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.templatetags.static import static
+from markdownx.admin import MarkdownxModelAdmin
 from .models import Post, Category, Comment
 
 
@@ -16,7 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(MarkdownxModelAdmin):
     list_display = [
         'name',
         'preview_image',

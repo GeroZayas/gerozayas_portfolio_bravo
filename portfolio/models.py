@@ -19,7 +19,7 @@ class Project(models.Model):
     is_active = models.BooleanField(default=True, db_index=True)
     technology = models.CharField(max_length=40)
     github_link = models.URLField(max_length=200)
-    image = models.ImageField(upload_to="projects/")
+    image = models.CharField(max_length=500, help_text="Path to static image, e.g., 'static/images/Projects/project.png'")
     ranking = models.IntegerField(default=7, db_index=True)
 
     def save(self, *args, **kwargs):

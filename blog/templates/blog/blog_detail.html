@@ -28,7 +28,7 @@
           <!-- Article Image -->
           <div class="relative aspect-video bg-gradient-to-br from-secondary to-primary">
             {% if post.image %}
-            {% optimized_image_tag post.image.url post.name "w-full h-full object-cover" %}
+            <img src="{{ post.image.url }}" alt="{{ post.name }}" class="w-full h-full object-cover" loading="lazy">
             {% else %}
             <div class="flex items-center justify-center h-full text-white text-8xl">📄</div>
             {% endif %}
@@ -75,7 +75,7 @@
 
           <!-- Article Content -->
           <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-            {{ post.body|safe }}
+            {{ post.body_html|safe }}
           </div>
         </div>
       </article>

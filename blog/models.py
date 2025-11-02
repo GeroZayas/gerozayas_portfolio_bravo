@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from ckeditor.fields import RichTextField
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 
 class Category(models.Model):
@@ -32,17 +33,21 @@ class Post(models.Model):
         ]
 
     name = models.CharField(max_length=255)
-    body = RichTextField(blank=True, null=True)
+    body = MarkdownxField(blank=True, null=True)
+    body_html = models.TextField(blank=True, editable=False)
     slug = models.SlugField(null=True, blank=True, max_length=255, unique=True, db_index=True)
     created_on = models.DateTimeField(auto_now_add=True, db_index=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category", related_name="posts")
-    image = models.ImageField(upload_to="blog/%Y/%m/")
+    image = models.ImageField(upload_to="blog/covers/", blank=True, help_text="Upload blog post cover image")
     is_active = models.BooleanField(default=True, db_index=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+        # Convert markdown to HTML and cache
+        if self.body:
+            self.body_html = markdownify(self.body)
         super().save(*args, **kwargs)
 
     def __str__(self):
