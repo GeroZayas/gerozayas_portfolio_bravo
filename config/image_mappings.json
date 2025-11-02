@@ -1,0 +1,50 @@
+{
+  "profile_images": {
+    "profile-pic.png": "images/optimized/profile/profile-pic.jpg",
+    "New-Profile-Pic-Gero.jpg": "images/optimized/profile/about-pic.jpg"
+  },
+  "project_images": {
+    "Activity_Suggestor_COVER.png": "images/optimized/projects/activity-suggestor.jpg",
+    "OpenAI_Language_Learning_Assistant_COVER.png": "images/optimized/projects/openai-assistant.jpg",
+    "Best_English_Resources_API_COVER.png": "images/optimized/projects/english-api.jpg",
+    "Goodreads_Quotes_Scraper_COVER.png": "images/optimized/projects/goodreads-scraper.jpg",
+    "Best_English_Resources_Web_COVER.png": "images/optimized/projects/english-web.jpg",
+    "Student_Report_Generator_Project_Cover.png": "images/optimized/ui/student-report-generator.jpg",
+    "Create_Wordwalls_From_All_Files_In_Folder_CLI_Za9VipN.png": "images/optimized/ui/wordwalls-cli.jpg",
+    "Dowload_List_Of_Youtube_Videos_CLI_RVIII6T.png": "images/optimized/ui/youtube-cli.jpg",
+    "Lyrics_Viasona_Cat.png": "images/optimized/ui/viasona-scraper.jpg",
+    "Memrise_Course_Vocabulary_Lists_to_Excel_CLI_49Ol180.png": "images/optimized/ui/memrise-cli.jpg"
+  },
+  "ui_images": {
+    "Password Manager GUI.png": "images/optimized/ui/password-manager.jpg",
+    "Gero's Quizzler App GUI.png": "images/optimized/ui/quizzler-app.jpg",
+    "Pomodoro App GUI.png": "images/optimized/ui/pomodoro-app.jpg",
+    "Create_Wordwalls_From_All_Files_In_Folder CLI.png": "images/optimized/ui/wordwalls-cli.jpg",
+    "Dowload_List_Of_Youtube_Videos CLI.png": "images/optimized/ui/youtube-cli.jpg",
+    "Memrise Course Vocabulary Lists to Excel CLI.png": "images/optimized/ui/memrise-cli.jpg",
+    "Student Report Generator Project Cover.png": "images/optimized/ui/student-report-generator.jpg",
+    "Scrape lyrics from Viasona Project Cover New.png": "images/optimized/ui/viasona-scraper.jpg"
+  },
+  "blog_images": {
+    "Blog_Post_Rest_Api_Cover_jyIIfYW.png": "images/optimized/blog/Blog_Post_Rest_Api_Cover_jyIIfYW.jpg",
+    "Learning_Django_2023_Blog_Post_Cover_3K8VWGI.png": "images/optimized/blog/Learning_Django_2023_Blog_Post_Cover_3K8VWGI.jpg",
+    "Qué_Bolá_Python_Episodio_1_Cover.png": "images/optimized/blog/Qu_Bol_Python_Episodio_1_Cover.jpg",
+    "Qué_Bolá_Python_Episodio_2_Cover.png": "images/optimized/blog/Qu_Bol_Python_Episodio_2_Cover.jpg",
+    "Qué_Bolá_Python_Episodio_3_Cover.png": "images/optimized/blog/Qu_Bol_Python_Episodio_3_Cover.jpg",
+    "Philology_English_Ling_Programming_Blog_Post_Cover_Y1hAxSw.png": "images/optimized/blog/Philology_English_Ling_Programming_Blog_Post_Cover_Y1hAxSw.jpg",
+    "Languages_Programming_Importance_Cover_Blog_Post_sahoXGk.png": "images/optimized/blog/Languages_Programming_Importance_Cover_Blog_Post_sahoXGk.jpg"
+  },
+  "patterns": {
+    "project_prefix": "Projects/",
+    "blog_suffix": "_Cover.png",
+    "ui_suffix": ".png",
+    "optimized_extension": ".jpg"
+  },
+  "settings": {
+    "enable_validation": true,
+    "enable_caching": true,
+    "cache_timeout": 3600,
+    "fallback_on_missing": true,
+    "log_missing_images": true
+  }
+}
