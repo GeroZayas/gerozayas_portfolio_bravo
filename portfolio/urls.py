@@ -3,8 +3,10 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = 'portfolio'
+
 urlpatterns = [
-    path("", views.PortfolioView.project_index, name="porfolio.index"),
+    path("", views.PortfolioView.project_index, name="portfolio_index"),
     path("<int:pk>/", views.PortfolioView.project_detail, name="project_detail"),
 ]
 

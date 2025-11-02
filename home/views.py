@@ -37,8 +37,8 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        certificates = Certificate.objects.filter(is_active=True)
-        portfolio_projects = Project.objects.filter(is_active=True)
+        certificates = Certificate.objects.filter(is_active=True).select_related().only('id', 'name', 'title', 'description', 'certificate_link', 'certificate_image', 'date')
+        portfolio_projects = Project.objects.filter(is_active=True).select_related().only('id', 'title', 'description', 'slug', 'technology', 'github_link', 'image', 'ranking')
 
         context["certificates"] = certificates
         context["portfolio_projects"] = portfolio_projects

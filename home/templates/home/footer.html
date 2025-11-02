@@ -1,61 +1,28 @@
 {% load static %}
 
-<!-- ================================
-    Start Footer
-    ================================= -->
-<footer style="margin: 0%">
-  <div class="footerCol shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-    <div class="container">
-      <ul class="socialCol">
-        <!-- facebook -->
-        <!-- <li>
-          <a href="https://www.facebook.com/GeroZayas"
-            ><img src="{% static 'images/facebook.png' %}" alt="facebook_link"
-          /></a>
-        </li> -->
-
-        <!-- linkedin -->
-        <li>
-          <a href="https://www.linkedin.com/in/gerardo-zayas-alvarez/"
-            ><img src="{% static 'images/linkedin.png' %}" alt="linkedin_link"
-          /></a>
-        </li>
-
-        <!-- instagram -->
-        <!-- <li>
-          <a href="https://www.instagram.com/gero_zayas/"
-            ><img
-              src="{% static 'images/instagram.png' %}"
-              alt="instagram_link"
-          /></a>
-        </li> -->
-
-        <!-- twitter -->
-        <li>
-          <a href="https://twitter.com/GrardEnrikke"
-            ><img src="{% static 'images/twitter.png' %}" alt="twitter_link"
-          /></a>
-        </li>
-
-        <!-- github -->
-        <li>
-          <a href="https://github.com/gerozayas"
-            ><img src="{% static 'images/github.png' %}" alt="github_link"
-          /></a>
-        </li>
-
-      </ul>
-      <div class="copyrightCol">
-        <p>
-          ©
-          <script type="text/javascript">
-            document.write(new Date().getFullYear());
-          </script>
-          Designed and coded with &#10084; by Gero Zayas. Source code for this website can be found on <a href="https://github.com/GeroZayas/gerozayas_portfolio_bravo">Github</a>.
-        </p>
-      </div>
+<footer>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/gerardo-zayas-alvarez/" target="_blank" title="LinkedIn">
+        <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn">
+      </a>
+      <a href="https://twitter.com/GrardEnrikke" target="_blank" title="Twitter">
+        <img src="{% static 'images/twitter.png' %}" alt="Twitter">
+      </a>
+      <a href="https://github.com/gerozayas" target="_blank" title="GitHub">
+        <img src="{% static 'images/github.png' %}" alt="GitHub">
+      </a>
+    </div>
+    
+    <div class="copyright">
+      <p>
+        © <span id="current-year"></span> Designed and coded with ❤️ by Gero Zayas. 
+        <a href="https://github.com/GeroZayas/gerozayas_portfolio_bravo" target="_blank">Source code on GitHub</a>.
+      </p>
     </div>
   </div>
 </footer>
 
-<!-- end of footer -->
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>

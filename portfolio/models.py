@@ -1,6 +1,5 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from ckeditor.fields import RichTextField
 
 
 class Project(models.Model):
@@ -15,7 +14,7 @@ class Project(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.TextField()
-    body = RichTextField(blank=True, null=True)
+    body = models.TextField(blank=True, null=True)
     slug = models.SlugField(null=True, blank=True, max_length=255, unique=True, db_index=True)
     is_active = models.BooleanField(default=True, db_index=True)
     technology = models.CharField(max_length=40)

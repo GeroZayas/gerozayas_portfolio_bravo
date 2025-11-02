@@ -26,7 +26,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 # Temporarily enable DEBUG to see errors
-DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+DEBUG = True
 # DEBUG = config("DEBUG", default=False, cast=bool)
 
 if not DEBUG:
@@ -71,7 +71,7 @@ if not DEBUG:
 # SECURE_HSTS_PRELOAD = True
 # ---------------------  -------------------------------
 else:
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Application definition
 
@@ -85,7 +85,6 @@ INSTALLED_APPS = [
     "home",
     "blog",
     "portfolio",
-    "ckeditor",
     "whitenoise.runserver_nostatic",
 ]
 
@@ -145,45 +144,13 @@ else:
     }
 
 
-# Redis Caching Configuration
-# Use Redis only in production (when DEBUG=False)
-if not DEBUG:
-    REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1')
-    CACHES = {
-        'default': {
-            'BACKEND': 'django_redis.cache.RedisCache',
-            'LOCATION': REDIS_URL,
-            'OPTIONS': {
-                'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-                'CONNECTION_POOL_CLASS_KWARGS': {
-                    'max_connections': 50,
-                    'retry_on_timeout': True,
-                },
-                'SOCKET_CONNECT_TIMEOUT': 5,
-                'SOCKET_TIMEOUT': 5,
-            },
-            'KEY_PREFIX': 'portfolio',
-            'TIMEOUT': 300,  # 5 minutes default
-        }
+# Simple caching configuration
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
     }
-else:
-    # Use simple in-memory cache for local development
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-            'LOCATION': 'unique-snowflake',
-        }
-    }
-
-# Cache template rendering in production
-if not DEBUG:
-    TEMPLATES[0]['APP_DIRS'] = False  # Must be False when using custom loaders
-    TEMPLATES[0]['OPTIONS']['loaders'] = [
-        ('django.template.loaders.cached.Loader', [
-            'django.template.loaders.filesystem.Loader',
-            'django.template.loaders.app_directories.Loader',
-        ]),
-    ]
+}
 
 
 # Password validation

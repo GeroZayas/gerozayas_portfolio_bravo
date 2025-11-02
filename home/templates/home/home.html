@@ -1,362 +1,98 @@
 {% extends './base.html' %} {% block home %} {% load static %}
 
-<div style="text-align: center; max-width: 700px" class="center">
-  <h1 class="hello">
-    Hi, I'm <span id="gero-name"><b>Gero Zayas</b></span> <br />
-    a
-    <span style="color: rgb(238, 203, 3); font-weight: 700">creative</span>
-    Full-Stack Software Developer<br />
-  </h1>
-
-  <!-- <button
-    id="download-btn"
-    type="button"
-    class="button-margin btn btn-outline-dark cool-shadow border-0"
-  >
-    Download <span style="color: rgb(225, 85, 84)">Resume</span>
-  </button> -->
-
-  <!-- DOWNLOAD RESUME -->
-
-  <!-- WITH LINK TO RXSESU.ME -->
-  <!-- <a
-    download="GeroZayasCV"
-    href="https://rxresu.me/gerozayas/python-full-stack-developer"
-    class="button-margin btn btn-outline-dark cool-shadow border-0"
-    >Download <span style="color: rgb(225, 85, 84)">Resume</span></a
-  > -->
-
-  <!-- WITH DIRECT DOWNLOAD -->
-  <a
-    download="Gerardo Zayas Python & Full Stack Developer EN"
-    href="{% static 'CV_Gero_Zayas/Gerardo Zayas Python & Full Stack Developer EN.pdf' %}"
-    class="button-margin btn btn-outline-dark cool-shadow border-0"
-    ><span style="color: rgb(225, 85, 84)"> ⬇️ Eng CV 🇬🇧</span></a
-  >
-  <a
-    download="Gerardo Zayas Python & Full Stack Developer ES"
-    href="{% static 'CV_Gero_Zayas/Gerardo Zayas Python & Full Stack Developer ES.pdf' %}"
-    class="button-margin btn btn-outline-dark cool-shadow border-0"
-    ><span style="color: rgb(225, 85, 84)">⬇️ Esp CV 🇪🇸</span></a
-  >
-  <a href="{% url 'home.contact' %}"
-    ><button
-      id="contact-btn"
-      type="button"
-      class="button-margin btn btn-outline-dark cool-shadow border-0 contact-btn"
-    >
-      📧 Contact
-    </button></a
-  >
-  <hr />
-
-  <p style="margin-left: auto; margin-right: auto; -ms-text-size-adjust: auto">
-    I’m a <b>hardworking programmer</b> located in beautiful Barcelona with a
-    passion for helping people and companies to get the best possible outcome.
-    <br />🗣️ Able to work in 🇬🇧 🇪🇸 🇩🇪 🇧🇷 🇮🇹 🇦🇩
-  </p>
-  {% comment %} PROJECT LINK {% endcomment %}
-  <a href="{% url 'porfolio.index' %}"
-    ><button
-      id="portfolio-btn"
-      type="button"
-      class="button-margin btn btn-outline-dark cool-shadow border-0"
-    >
-      ⭐ Full List of Projects ⭐
-    </button></a
-  >
-  {% comment %} END OF PROJECT LINK {% endcomment %}
-</div>
-
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-
-{% include 'home/projects_carousel.html' %}
-
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-
-<div class="center">
+<section class="hero">
   <div class="container">
-    <div class="row">
-      <div style="margin: 10px; padding: 0px" class="col">
-        <h2 style="text-align: center">Programming Languages & Skills</h2>
-        <hr />
+    <h1 class="fade-in">
+      Hi, I'm <b>Gero Zayas</b> <br />
+      a <span style="color: #f7d239;">creative</span> Full-Stack Software Developer
+    </h1>
+    
+    <div class="hero-actions">
+      <a 
+        download="Gerardo Zayas Python & Full Stack Developer EN"
+        href="{% static 'CV_Gero_Zayas/Gerardo Zayas Python & Full Stack Developer EN.pdf' %}"
+        class="btn"
+      >
+        ⬇️ Eng CV 🇬🇧
+      </a>
+      
+      <a 
+        download="Gerardo Zayas Python & Full Stack Developer ES"
+        href="{% static 'CV_Gero_Zayas/Gerardo Zayas Python & Full Stack Developer ES.pdf' %}"
+        class="btn btn-secondary"
+      >
+        ⬇️ Esp CV 🇪🇸
+      </a>
+      
+      <a href="{% url 'home.contact' %}" class="btn">
+        📧 Contact
+      </a>
+    </div>
+  </div>
+</section>
 
-        <!-- PROGRAMMING SKILLS -->
-        <div
-          style="max-width: 300px"
-          class="skills center card cool-shadow border-0 col"
-        >
-          <p></p>
-
-          <!-- PYTHON SKILL -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-coding"
-              style="width: 90%"
-            >
-              Python / Django / Flask / FastAPI 90%
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- HTMl SKILL -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-coding"
-              style="width: 85%"
-            >
-              HTML / CSS / Tailwind 85%
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- Javascript SKILL -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-coding"
-              style="width: 85%"
-            >
-              JavaScript / Node 85%
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- SQL SKILL -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-coding"
-              style="width: 70%"
-            >
-              SQL / MySQL / SQlite 70%
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- Docker  / Aws SKILL -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-coding"
-              style="width: 70%"
-            >
-              Docker / AWS / Redis 70%
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- JAVASCRIPT SKILL -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-coding"
-              style="width: 60%"
-            >
-              React / Angular 60%
-            </div>
-          </div>
-          <p></p>
-
-          <!-- LANGUAGE SKILLS -->
+<!-- Projects Preview -->
+<section class="projects">
+  <div class="container">
+    <h2 class="text-center">Featured Projects</h2>
+    
+    <div class="projects-grid">
+      {% for project in portfolio_projects|slice:":3" %}
+      <div class="project-card">
+        {% if project.image %}
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        {% endif %}
+        <div class="project-card-content">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description|truncatewords:20 }}</p>
+          <p><small><b>Technology:</b> {{ project.technology }}</small></p>
+          <a href="{{ project.github_link }}" class="btn" target="_blank">View on GitHub</a>
         </div>
       </div>
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!-- LANGUAGE SKILLS -->
-      <div style="margin: 10px; padding: 0px" class="col">
-        <h2 style="text-align: center">Natural languages</h2>
-        <hr />
+      {% endfor %}
+    </div>
+    
+    <div class="text-center mt-4">
+      <a href="{% url 'portfolio:portfolio_index' %}" class="btn">View All Projects</a>
+    </div>
+  </div>
+</section>
 
-        <div
-          style="max-width: 300px"
-          class="skills center card cool-shadow border-0 col"
-        >
-          <p></p>
-          <!-- Spanish-->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-languages"
-              style="width: 100%"
-            >
-              Spanish Native
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- English -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-languages"
-              style="width: 95%"
-            >
-              English C2
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- Catalan-->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-languages"
-              style="width: 80%"
-            >
-              Catalan B2
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- German -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-languages"
-              style="width: 60%"
-            >
-              German B1
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- Portuguese -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-languages"
-              style="width: 60%"
-            >
-              Portuguese B1
-            </div>
-          </div>
-          <hr class="hr" />
-
-          <!-- Italian -->
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Example with label"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar rounded-pill bg-gradient-languages"
-              style="width: 60%"
-            >
-              Italian B1
-            </div>
-          </div>
-          <p></p>
+<!-- Skills Preview -->
+<section class="skills">
+  <div class="container">
+    <h2 class="text-center">Skills & Expertise</h2>
+    
+    <div class="skills-grid">
+      <div class="skill-bar">
+        <h4>Python/Django</h4>
+        <div class="progress">
+          <div class="progress-bar" style="width: 90%"></div>
         </div>
-
-        <!--  -->
-        <!--  -->
-        <!--  -->
-        <!--  -->
+      </div>
+      
+      <div class="skill-bar">
+        <h4>JavaScript/React</h4>
+        <div class="progress">
+          <div class="progress-bar" style="width: 75%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-bar">
+        <h4>Database Design</h4>
+        <div class="progress">
+          <div class="progress-bar" style="width: 80%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-bar">
+        <h4>API Development</h4>
+        <div class="progress">
+          <div class="progress-bar" style="width: 85%"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-
-{% include 'home/certificates.html' %}
-
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-<!-- ------------------------------------------------------------------ -->
-
-<!-- <div class="featured-work center">
-  <h2 style="text-align: center;">FEATURED WORK</h2>
-  <hr class="hr " />
-
-</div> -->
-
-{% endblock %}
+{% endblock home %}

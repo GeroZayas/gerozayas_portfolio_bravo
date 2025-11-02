@@ -7,7 +7,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("home.urls")),  # include your app urls
     path("blog/", include("blog.urls")),
-    path("portfolio/", include("portfolio.urls")),  # include your app urls
+    path("portfolio/", include("portfolio.urls", namespace="portfolio")),  # include your app urls
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
