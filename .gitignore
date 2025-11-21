@@ -12,10 +12,10 @@ env_ubuntu/
 *.pyc
 __pycache__/
 local_settings.py
-media
-# Exception: commit blog cover images
-!media/blog/
-!media/blog/covers/
+# media
+# # Exception: commit blog cover images
+# !media/blog/
+# !media/blog/covers/
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -184,3 +184,7 @@ cython_debug/
 
 # Database - SQLite is now tracked for deployment
 # *.sqlite3
+
+
+#Ignore windsurf AI rules
+.windsurfrules

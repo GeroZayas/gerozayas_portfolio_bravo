@@ -1,7 +1,7 @@
-TEMP NOTES (4 / MAR/ 2024)
------------------------------------------------------------- 
+1st prompt for Gemini 3 starting to work on this project:
 
-Right Now (March 5, 2024):
-- Working on adding new projects to portfolio
-    - TODO: ADD Google-Calendar-PySimpleGui
-            
+
+```
+This project is my personal website porfolio. It's developed in Django and it is deployed in Railway app. I have recently redesigned it, but some things are not working right on Railway. I want to make some changes apart from the fizes this needs, one of which is the images not showing correctly on Railway app. The thing is that I do not want to use postgres or anything like that on railway, even though I am aware that is a possibility there. What I would like is a way to establish changes, additions right here locally, on my machine, and the simply commit those changes to git and github and I know that triggers a new deployment in Railway app. So, I am perfectly happy to work with sqlite locally, meaning I add, for example new projects or blog posts or whatever here locally, with their respective assets, meaning images, and then I just want to commit, adn then the railway app would deploy and I want it to work just fine. Do I make myself clear? What do you need now to understand this project and anything else you want to know about?
+
+```

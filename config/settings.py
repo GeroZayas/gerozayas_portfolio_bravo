@@ -22,32 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = config("SECRET_KEY")
 SECRET_KEY = env("SECRET_KEY")
 
-# New update
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-# Temporarily enable DEBUG to see errors
-DEBUG = False
-# DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = env.bool("DEBUG", default=False)
 
 if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = [
-        "https://pygero.up.railway.app",
-        "http://pygero.up.railway.app",
-        "https://www.gerozayas.com",
-        "http://www.gerozayas.com",
-    ]
-
-    SECURE_SSL_REDIRECT = False
-
-    SESSION_COOKIE_SECURE = True
-
-    CSRF_COOKIE_SECURE = True
-
-    SECURE_HSTS_SECONDS = 2592000  # 30 days
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
-
-
     ALLOWED_HOSTS = [
         ".gerozayas.com",
         "www.gerozayas.com",
@@ -55,6 +32,20 @@ if not DEBUG:
         "pygero.up.railway.app",
         ".railway.app",
     ]
+
+    CSRF_TRUSTED_ORIGINS = [
+        "https://pygero.up.railway.app",
+        "https://www.gerozayas.com",
+        "https://gerozayas.com",
+        "https://*.railway.app",
+    ]
+
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 2592000  # 30 days
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 
 
